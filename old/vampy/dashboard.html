@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Python 101: A Crash Course</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(135deg, #9333EA, #6366F1);
+            padding: 2rem;
+        }
+
+        .dashboard-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4B5563;
+            margin: 0.5rem 0;
+        }
+
+        .module-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .module {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid #E5E7EB;
+            border-radius: 0.5rem;
+            position: relative;
+            border-left: 4px solid #9333EA;
+        }
+
+        .module-number {
+            color: #9333EA;
+            font-size: 1.2rem;
+            font-weight: bold;
+            width: 40px;
+        }
+
+        .module-content {
+            flex-grow: 1;
+        }
+
+        .module-title {
+            font-weight: bold;
+            color: #1F2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .module-time {
+            color: #6B7280;
+            font-size: 0.9rem;
+        }
+
+        .module-status {
+            width: 24px;
+            height: 24px;
+            color: #10B981;
+        }
+
+        .module.locked {
+            opacity: 0.7;
+        }
+
+        .module.locked .module-status {
+            color: #9CA3AF;
+        }
+
+        .logout-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: white;
+            color: #4B5563;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logout-btn:hover {
+            background: #F3F4F6;
+        }
+
+        .module-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .module-link:hover .module {
+            background-color: #F3F4F6;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>AI Python for Beginners: A Crash Course</h1>
+        
+        <div class="card">
+            <h2>Course Overview</h2>
+            <div class="overview-item">
+                👥 Collaborative learning in teams of 4
+            </div>
+            <div class="overview-item">
+                💬 Communication is done via Discord
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Course Roadmap</h2>
+            <p style="color: #6B7280;">Follow each module with your team</p>
+            
+            <div class="module-list">
+                <div class="module">
+                    <div class="module-number">01</div>
+                    <div class="module-content">
+                        <div class="module-title">Welcome & Setup</div>
+                        <div class="module-time">9:30 AM - 10:00 AM</div>
+                        <div class="module-description">Get settled, meet fellow participants, and set up your coding environment.</div>
+                    </div>
+                    <div class="module-status">✓</div>
+                </div>
+
+                <div class="module">
+                    <div class="module-number">02</div>
+                    <div class="module-content">
+                        <div class="module-title">Python Fundamentals</div>
+                        <div class="module-time">10:00 AM - 11:30 AM</div>
+                        <div class="module-description">Write your first lines of Python code and understand core programming concepts.</div>
+                    </div>
+                    <div class="module-status">✓</div>
+                </div>
+
+                <div class="module">
+                    <div class="module-number">03</div>
+                    <div class="module-content">
+                        <div class="module-title">Using AI as Assistance</div>
+                        <div class="module-time">11:30 AM - 12:30 PM</div>
+                        <div class="module-description">Work on a hands-on project, such as an AI-powered to-do list or recipe generator with the help of AI like ChatGPT</div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <div class="module-number">04</div>
+                    <div class="module-content">
+                        <div class="module-title">Lunch Break (Provided)</div>
+                        <div class="module-time">12:30 PM - 1:15 PM</div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <div class="module-number">05</div>
+                    <div class="module-content">
+                        <div class="module-title">Working with AI APIs & Real-World Data</div>
+                        <div class="module-time">1:15 PM - 2:30 PM</div>
+                        <div class="module-description">Learn how to connect Python with OpenAI, Hugging Face, and other AI services.</div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <div class="module-number">06</div>
+                    <div class="module-content">
+                        <div class="module-title">Creating a User Friendly Interface for your App</div>
+                        <div class="module-time">2:30 PM - 3:15 PM</div>
+                        <div class="module-description">Learn how to use Gradio to create a nice interface for your App</div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <div class="module-number">07</div>
+                    <div class="module-content">
+                        <div class="module-title">Final Project Presentations & Awards</div>
+                        <div class="module-time">3:15 PM - 3:30 PM</div>
+                        <div class="module-description">Showcase what you built and get a certificate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="logout-btn">Logout</button>
+</body>
+</html> 

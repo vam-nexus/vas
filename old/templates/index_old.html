@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AISpace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<style>
+:root {
+    --color-cyan-400: #22d3ee;
+    --color-indigo-400: #818cf8;
+    --color-cyan-600: #0891b2;
+    --color-indigo-600: #4f46e5;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(125deg, #111827 0%, #1e3a8a 60%, #312e81 100%);
+    background-attachment: fixed;
+    color: var(--color-gray-200);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.header {
+    background: transparent;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    padding: 1.5rem 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.logo-vancouver {
+    color: var(--color-cyan-400);
+}
+
+.logo-ai-space {
+    color: var(--color-indigo-400);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.button-primary {
+    background: #454598;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+.button-primary:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-outline {
+    background: rgba(79, 70, 229, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 2rem;
+}
+
+.button-outline:hover {
+    background-color: rgba(79, 70, 229, 0.7);
+}
+
+.button-secondary {
+    background: linear-gradient(to right, var(--color-cyan-600), var(--color-indigo-600));
+    color: white;
+}
+
+.section {
+    padding: 3rem 0;
+}
+
+.section-alt {
+    background: linear-gradient(125deg, rgba(17, 24, 39, 0.7) 0%, rgba(30, 58, 138, 0.7) 60%, rgba(49, 46, 129, 0.7) 100%);
+    backdrop-filter: blur(8px);
+    padding: 4rem 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--color-cyan-400);
+    margin-bottom: 2rem;
+    margin-top: -3rem;
+    font-weight: 600;
+}
+
+.card {
+    background: linear-gradient(145deg, rgba(31, 41, 55, 0.6), rgba(31, 41, 55, 0.4));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(34, 211, 238, 0.25);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 48px rgba(34, 211, 238, 0.1);
+}
+
+.card-text {
+    margin-bottom: 1rem;
+}
+
+.feature-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+}
+
+.feature-list li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.icon {
+    margin-right: 1rem;
+    font-size: 1.25rem;
+}
+
+.sub-list {
+    list-style-type: disc;
+    padding-left: 2rem;
+    color: var(--color-gray-400);
+}
+
+.project-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.project-card {
+    flex: 0 0 auto;
+    width: 300px;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    color: var(--color-cyan-400);
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--color-cyan-400);
+}
+
+.roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.roadmap-step {
+    display: flex;
+    align-items: center;
+    background-color: rgba(31, 41, 55, 0.5);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.roadmap-number {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--color-cyan-600), var(--color-indigo-600));
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.roadmap-content {
+    flex: 1;
+}
+
+.roadmap-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-cyan-400);
+    margin-bottom: 0.25rem;
+}
+
+.structure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.register-card {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer {
+    background-color: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(34, 211, 238, 0.2);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--color-gray-800);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+}
+
+.modal-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-cyan-400);
+    margin-bottom: 1rem;
+}
+
+.modal-text {
+    margin-bottom: 1rem;
+}
+
+.hero {
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(125deg, rgba(17, 24, 39, 0.7) 0%, rgba(30, 58, 138, 0.7) 60%, rgba(49, 46, 129, 0.7) 100%);
+    backdrop-filter: blur(8px);
+}
+
+.hero-title {
+    font-size: 4rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, var(--color-cyan-400), var(--color-indigo-400));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.button-primary .chevron-right {
+    margin-left: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.cta-button {
+    background: linear-gradient(to right, #0ea5e9, #6366f1);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.cta-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.cta-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        padding: 0 1rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .nav-links {
+        gap: 0.5rem;
+    }
+
+    .button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-top: -1.5rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    .project-gallery {
+        padding: 0 1rem;
+    }
+
+    .project-card {
+        width: 250px;
+    }
+
+    .structure-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facilitator img {
+        width: 80px;
+    }
+}
+
+.social-feed {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-form {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+.post-input {
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.posts-container .card {
+    margin-bottom: 1rem;
+}
+
+.post {
+    padding: 1.5rem;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.post-author {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.post-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.post-content {
+    margin-bottom: 1rem;
+}
+
+.post-actions {
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.post-action {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.post-action:hover {
+    color: var(--primary-color);
+}
+
+.comments-section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.comment {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.comment-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    min-height: 70px;
+    margin-bottom: 0;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.feature-content .sub-list {
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+}
+
+.section img {
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.section img:hover {
+    transform: scale(1.05);
+}
+
+.link {
+    color: #66B2FF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #3399FF;
+}
+
+.week-description {
+    font-size: 0.6em;
+    font-style: italic;
+    color: rgb(192, 192, 192);
+}
+
+.facilitator {
+    margin-bottom: 2rem;
+}
+
+.button-linkedin {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #0077b5; /* LinkedIn blue */
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.button-linkedin:hover {
+    background-color: #005582; /* Darker LinkedIn blue for hover */
+}
+
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-cyan-400), transparent);
+    margin: 4rem 0;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .section-alt {
+        padding: 3rem 1rem;
+    }
+    
+    .hero {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Fix for project gallery scrolling on mobile */
+.project-gallery {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.project-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.agenda-table {
+    width: 100%;
+    border-spacing: 0;
+    margin: 1rem 0;
+}
+
+.agenda-table td {
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+}
+
+.agenda-table tr:hover td {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.agenda-table td:first-child {
+    width: 40%;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.agenda-table td:last-child {
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.location-note {
+    margin-top: 0.25rem;
+    font-size: 0.9em;
+    color: var(--color-gray-300);
+}
+
+@media (max-width: 768px) {
+    .agenda-table {
+        font-size: 0.9em;
+    }
+    
+    .agenda-table td {
+        padding: 0.5rem;
+    }
+    
+    .agenda-table td:first-child {
+        width: 45%;
+    }
+}
+
+</style>
+<body>
+    <header class="header">
+        <nav class="container">
+            <a href="/" class="logo">
+                <span class="logo-vancouver">Vancouver</span> <span class="logo-ai-space">AISpace</span>
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('dashboard') }}" class="nav-link">Dashboard</a>
+                    <a href="{{ url_for('logout') }}" class="button button-outline">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+                    <a href="{{ url_for('register') }}" class="nav-link">Register</a>
+                    <a href="https://lu.ma/rtrxajcq" class="button button-outline">Register for Program</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1 class="hero-title">Build Your AI Ideas with Vancouver AI Space<br>(season 2)</h1>
+            </h1>
+            <!-- <h2>The Dev Track of the Vancouver AI Meetup (VAM!)</h2> -->
+            <p class="hero-subtitle">Join our 6-week program and turn bring your AI ideas to life with the support of a passionate community.</p>
+            <p class="hero-subtitle">Feb 22nd to March 5th, 2025</p>
+            <a href="https://lu.ma/rtrxajcq" class="button button-primary">Register for the Program <span class="chevron-right">›</span></a>
+        
+        </section>
+
+
+
+
+        <section class="section">
+            <h2 class="section-title" style="margin-top: -3.0rem;">Program Overview</h2>
+            <div class="card">
+                <div class="card-text">
+                    <h3>Join Vancouver AI Space (Season 2)</h3>
+                    <p>A 6-week online program hosted by Vancouver AI Meetup (VAM!) featuring:</p>
+                    
+                    <ul style="list-style-type: disc; padding-left: 2rem; margin-bottom: 1.5rem;">
+                        <li>Feb 22nd to March 5th, 2025</li>
+                        <li>Optional in-person sessions</li>
+                        <li>Guidance to bring your AI idea to life</li>
+                        <li>Support from a passionate community</li>
+                    </ul>
+
+                    <h3>What You'll Get to Learn</h3>
+                    <ul style="list-style-type: none; padding-left: 2rem; margin-bottom: 1.5rem;">
+                        <li>🤖 Agentic LLMs</li>
+                        <li>🔍 Retrieval-Augmented Generation (RAG)</li>
+                        <li>⚡ Prompt Engineering</li>
+                        <li>🛠️ Full Stack Implemenation of an AI App</li>
+                    </ul>
+
+                    <h3>Program Highlights</h3>
+                    <ul style="list-style-type: disc; padding-left: 2rem; margin-bottom: 1.5rem;">
+                        <li>Work at your own pace online with a team</li>
+                        <li>Learn from research and industry experts</li>
+                        <li>Connect with new people in the field</li>
+                        <li>No mandatory in-person attendance required</li>
+                    </ul>
+                </div>
+                <h3>The Six-Week Roadmap</h3>
+                <div class="feature-grid" id="weeks">
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-content">
+                            <p>Week 1: Build a Basic Agentic AI App</p>
+                            <p class="week-description">We'll guide you to build a simple example of an Agentic AI app as a warm up. </p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👥</div>
+                        <div class="feature-content">
+                            <p>Week 2: Share Your Idea</p>
+                            <p class="week-description">Submit your AI idea and get feedback to refine it.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💬</div>
+                        <div class="feature-content">
+                            <p>Week 3: Build a Prototype</p>
+                            <p class="week-description">Turn your idea into a basic working model for a specific usecase.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🤝</div>
+                        <div class="feature-content">
+                            <p>Week 4: Create a User Interface</p>
+                            <p class="week-description">Design an interface, like a website or app, for users to interact with your App.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌐</div>
+                        <div class="feature-content">
+                            <p>Week 5: Test Your App</p>
+                            <p class="week-description">Run your app through different use cases to ensure it works effectively.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📅</div>
+                        <div class="feature-content">
+                            <p>Week 6: Submit and Present</p>
+                            <p class="week-description">Submit your demo and showcase your app to an audience.</p>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+         <div class="section-divider"></div>
+
+        <section class="section section-alt">
+            <h2 class="section-title">Example Projects from Season 1</h2>
+            <div class="project-gallery">
+                <!-- Project cards will be dynamically inserted here by JavaScript -->
+                <div class="project-card card">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
+                        <img src="images/1.webp" alt="Bouncy Bot: AI Dance Sequence Generator" class="project-image">
+                        <h3 class="project-title">Bouncy Bot: AI Dance Sequence Generator</h3>
+                    </a>
+                </div><div class="project-card card">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
+                        <img src="images/2.webp" alt="GroderAI: Rebolutionize Code Grading" class="project-image">
+                        <h3 class="project-title">GroderAI: Rebolutionize Code Grading</h3>
+                    </a>
+                </div><div class="project-card card">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
+                        <img src="images/3.webp" alt="Project SleepWise: A Journey into Disrupting Healthcare with Wearable Data" class="project-image">
+                        <h3 class="project-title">Project SleepWise: A Journey into Disrupting Healthcare with Wearable Data</h3>
+                    </a>
+                </div><div class="project-card card">
+                    <a href="https://www.youtube.com/watch?v=d9I7SuuPctk" target="_blank" rel="noopener noreferrer">
+                        <img src="images/6.webp" alt="Predictive Maintenance System" class="project-image">
+                        <h3 class="project-title">AI Essay Grader</h3>
+                    </a>
+                </div><div class="project-card card">
+                    <a href="https://www.youtube.com/watch?v=SG24uUtCHR4" target="_blank" rel="noopener noreferrer">
+                        <img src="images/5.webp" alt="AI-Driven Financial Advisor" class="project-image">
+                        <h3 class="project-title">Fake News Detector</h3>
+                    </a>
+                </div></div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+   <section class="section">
+            <h2 class="section-title" style="margin-top: -3.0rem;">How Does it Work?</h2>
+             <div class="card">
+                <div class="feature-list" style="margin-top: 2rem;">
+                    <h3><span class="icon">🚀</span> AI Idea & Team Formation:</h3>
+                    <ul>
+                        <li><span class="icon">💡</span> In the first week, be prepared to propose or join an existing project that you are excited about.</li>
+                    </ul>
+
+                    <h3><span class="icon">💬</span> Communication:</h3>
+                    <ul>
+                        <li><span class="icon">🤝</span> Get access to a Discord community for regular teachings, personalized feedback, and support from facilitators and the community when you apply.</li>
+                    </ul>
+
+                    
+
+                    <h3><span class="icon">📅</span> Agenda:</h3>
+                    <p style="margin-left: 2rem; color: var(--color-gray-300);">Program runs from Feb 22nd to March 5th, 2025</p>
+                    
+                    <table class="agenda-table">
+                        <tr>
+                            <td><span class="icon">🎯</span> Orientation Day</td>
+                            <td>Feb 22nd, 1:00-3:30pm (PST)
+                                <div class="location-note">Available both online and in-person at Northeastern University 410 W Georgia St #1400 Vancouver</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="icon">🎉</span> Demo Day</td>
+                            <td>March 5th, 5:30-8:00pm (PST)
+                                <div class="location-note">Available both online and in-person at Northeastern University 410 W Georgia St #1400 Vancouver</div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="margin-left: 2rem; color: var(--color-gray-300);">Each week includes (all optional):</p>
+                    
+                    <table class="agenda-table">
+                        <tr>
+                            <td><span class="icon">📚</span> Online lectures</td>
+                            <td>Mondays & Wednesdays at 5:30-6:30pm (PST)<br><div class="location-note">Both cover the same material</div></td>
+                        </tr>
+                        <tr>
+                            <td><span class="icon">🎯</span> Online office hours</td>
+                            <td>Saturdays at 11:00-12:15pm (PST)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="icon">👥</span> Online (and in-person) co-working spaces</td>
+                            <td>Tuesdays & Thursdays 5:30-8:00pm (PST)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="icon">🎉</span> In-person social events</td>
+                            <td>Saturdays 5:30pm-8:00pm (PST)</td>
+                        </tr>
+                    </table>
+
+                    <h3><span class="icon">⏰</span> Deadlines:</h3>
+                    <ul>
+                        <li><span class="icon">✅</span> Weekly assignments due Sunday midnight</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            </div>
+
+        </section>
+
+        <div class="section-divider"></div>
+
+<!-- 
+        <section class="section">
+            <h2 class="section-title">Important Dates</h2>
+            <div class="structure-grid">
+                <div class="card">
+                    <h3 class="card-title">Orientation & Demo Day <br><span class="icon">📅</span> First & Last Day</h3>
+                    <ul class="feature-list">
+                        <li><span class="icon">📚</span>Orientation:
+Scheduled for February 22nd, from 1:00 PM to 3:30 PM (PST)</li>
+                        <li><span class="icon">🧠</span> Demo Day:
+Happening on March 5th, from 5:30 PM to 8:00 PM (PST)</li>
+                        <li><span class="icon">✅</span> Accessibility:
+Both events are available in-person at Northeastern University and online for your convenience.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Weekly Online Lectures <br> <span class="icon">📅</span> Mondays & Wednesdays</h3>
+                    <ul class="feature-list">
+                        <li><span class="icon">📚</span> Both sessions are scheduled from 6:00 PM to 7:15 PM (PST).</li>
+                        <li><span class="icon">🧠</span> We strongly encourage attendance at either session (as both cover the same material), and recordings will be available if you miss both.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Weekly Deadlines 
+                    <br> <span class="icon">📅</span> Sundays</h3>
+                    <ul class="feature-list">
+                        <li><span class="icon">✅</span> Assignments are released on Mondays and due by Sunday midnight.</li>
+                        <li><span class="icon">��</span> Feedback on your submissions will be provided on Monday.</li>
+                    </ul>
+                </div>
+
+                 <div class="card">
+                    <h3 class="card-title">Weekly Office Hours (Optional)<br> <span class="icon">📅</span> Saturdays</h3>
+                    <ul class="feature-list">
+                        <li><span class="icon">✅</span> Held from 11:00 AM to 12:15 PM (PST) on Zoom.</li>
+                        <li><span class="icon">💬</span> Facilitators will be available to assist you with your project.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Weekly Co-working Spaces (Optional)<br> <span class="icon">📅</span> Tuesdays & Thursdays</h3>
+                    <ul class="feature-list">
+                        <li><span class="icon">✅</span> Available from 5:30 PM to 8:00 PM (PST) at various coffee shops in Downtown Vancouver.</li>
+                        <li><span class="icon">💬</span> Join us both on Zoom and in person to collaborate with others.</li>
+                    </ul>
+                </div>
+
+                 <div class="card">
+                    <h3 class="card-title">Bi-Weekly Social Events (Optional)<br> <span class="icon">📅</span> Saturdays</h3>
+                    <ul class="feature-list">
+                        <li><span class="icon">✅</span> Scheduled from 5:30 PM to 8:30 PM for board games and socializing.</li>
+                        <li><span class="icon">💬</span> A great opportunity to meet new people and network within the community.</li>
+                    </ul>
+                </div>
+
+                  
+
+            </div>
+        </section> -->
+
+        <div class="section-divider"></div>
+
+        <section class="section section-alt">
+            <h2 class="section-title">Who's this For?</h2>
+            <div class="card">
+                <ul class="feature-list">
+                    <li><span class="icon">👥</span> Developers, entrepreneurs, or students passionate about building an AI-driven project.</li>
+                    <li><span class="icon">📅</span> Flexible schedule: Works well for those with full-time jobs or full-time studies</li>
+                    <li><span class="icon">⚡</span> Work at your own pace, online, during nights and weekends.</li>
+                    <li>
+                        <span class="icon">🧠</span> A basic understanding of Python coding is required.
+                        <br>You are ready for the program if you can pass these two challenges:
+                       
+                    </li>
+                     <ul class="sub-list">
+                            <li><a href="#" class="link">Python Quiz (Pass Score is 10/18)</a></li>
+                            <li><a href="#" class="link">Data Analytics Challenge</a></li>
+                        </ul>
+                </ul>
+                
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="section">
+            <h2 class="section-title">What You Get</h2>
+            <div class="card">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-content">
+                            <p>Weekly lectures, labs and assignments covering cutting-edge AI topics</p>
+                            <!-- <ul class="sub-list">
+                                <li>Examples: Agentic Systems, Retrieval-Augmented Generation (RAG)
+                                and Prompt Engineering</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👥</div>
+                        <div class="feature-content">
+                            <p>Office hours and co-working spaces (both in-person & Online)</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💬</div>
+                        <div class="feature-content">
+                            <p>Active Discord Channels with support from expert devs and professors</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🤝</div>
+                        <div class="feature-content">
+                            <p>Dedicated accountability partner for motivation</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌐</div>
+                        <div class="feature-content">
+                            <p>Network with industry developers and AI experts in the field</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-content">
+                            <p>Final demo day to showcase your work to a worldwide audience</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎓</div>
+                        <div class="feature-content">
+                            <p>Certificate of Achievement upon successful program completion</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🍽️</div>
+                        <div class="feature-content">
+                            <p>Enjoy food and refreshments during events</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏆</div>
+                        <div class="feature-content">
+                            <p>Win prizes from challenges and best demos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="section section-alt">
+            <h2 class="section-title">What Our Participants Say</h2>
+            <div class="testimonial-grid">
+                <div class="card">
+                    <p class="testimonial-text">"As we wrap up an incredible 6 weeks of hard work, learning, and collaboration, I'm thrilled to share that my AI project is nearing completion! These past weeks have been filled with challenges, tight deadlines, new skills, and so much fun.
+
+A huge shoutout to Vancouver AI Space and our amazing instructors and facilitators, Issam Laradji and Kosay Jabre, for making this journey possible. Your guidance and the vibrant virtual and physical spaces you've provided have been invaluable for learning, socializing, and supporting one another."</p>
+                    <p class="testimonial-author">- Tijana Sretenović</p>
+                </div>
+                <div class="card">
+                    <p class="testimonial-text">"I am deeply grateful to the organizers of the Vancouver AI Space program @Issam Laradji and @Kosay as well as all the participants for fostering such an inspiring and creative environment that stimulated meaningful discussions and ideas. The experience has been incredibly helpful in advancing the development of my app, DiabetesAI. I am proud to be part of this vibrant Vancouver AI community and look forward to contributing further to its growth and innovation."</p>
+                    <p class="testimonial-author">- Igor Putrenko</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="section">
+            <h2 class="section-title">Our Sponsors</h2>
+            <div class="card" style="text-align: center;">
+                <img src="images/ai_alliance.png" alt="AI Alliance Logo" style="max-width: 200px; margin-bottom: 1rem;">
+                <h3 style="color: var(--color-cyan-400); margin-bottom: 1rem;">Proudly Supported by AI Alliance</h3>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="section section-alt">
+            <h2 class="section-title">Facilitators</h2>
+            <div class="card">
+                <div class="facilitator">
+                    <img src="images/issam_laradji.jpeg" alt="Issam Laradji" style="width: 100px; border-radius: 50%; margin-bottom: 1rem;">
+                    <h3>Issam Laradji, PhD</h3>
+                    <p>Adjunct Professor, UBC, Research Scientist, ServiceNow</p>
+                    <p>Issam Laradji is a research scientist at ServiceNow and an adjunct professor at the University of British Columbia. He focuses on building AI models that can help humans achieve their goals in the best possible way. With a postdoc from McGill University and a PhD and MSc from the University of British Columbia, his expertise includes natural language processing, computer vision, and optimization. Issam is passionate about making AI more accessible to everyone and leads an inclusive, thriving community built on collaboration and shared learning. His vision is to create an environment where fun teams can network and work together on ambitious projects to spark curiosity, drive innovation, and advance human's potential in what is possible.</p>
+                    <a href="https://www.linkedin.com/in/issam-laradji-67ba1a99/" target="_blank" rel="noopener noreferrer" class="button-linkedin">LinkedIn</a>
+                </div>
+                <div class="facilitator">
+                    <img src="images/dylan_nihte.jpeg" alt="Dylan Nihte" style="width: 100px; border-radius: 50%; margin-bottom: 1rem;">
+                    <h3>Dylan Nihte</h3>
+                    <p>AI Staffing Expert</p>
+                    <p>Experienced entrepreneur focused on AI staffing. I build tailored AI Staffing models for business growth and client nurturing. Fully automating your human resource requirements, empowering hard-working entrepreneurs to better focus on leading their business.</p>
+                    <a href="https://www.linkedin.com/in/dylan-nihte/" target="_blank" rel="noopener noreferrer" class="button-linkedin">LinkedIn</a>
+                </div>
+                <div class="facilitator">
+                    <img src="images/eric_laycock.jpeg" alt="Eric Laycock" style="width: 100px; border-radius: 50%; margin-bottom: 1rem;">
+                    <h3>Eric Laycock</h3>
+                    <p>ML Engineer</p>
+                    <p>I'm overseeing finetuning of hundreds of large language models and overseeing the scaling of AI provider API traffic, as well as building user-satisfying agentic AI.</p>
+                    <a href="https://www.linkedin.com/in/eric-laycock/" target="_blank" rel="noopener noreferrer" class="button-linkedin">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="register" class="section">
+            <h2 class="section-title">Join the Community</h2>
+            <div class="card register-card">
+                <p class="card-text">Upon successful completion of the program, you'll receive a certificate of achievement recognizing your achievement building AI Apps.</p>
+                <a href="https://lu.ma/rtrxajcq" target="_blank" rel="noopener noreferrer" class="button button-primary">Register on Luma</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Vancouver AI Space. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Background Knowledge Check</h3>
+            <p class="modal-text">To succeed in this program, you should have:</p>
+            <ul class="feature-list">
+                <li><span class="icon">🧠</span> Basic understanding of Python programming</li>
+                <li><span class="icon">🧠</span> Familiarity with data structures and algorithms</li>
+                <li><span class="icon">🧠</span> Knowledge of basic machine learning concepts</li>
+                <li><span class="icon">🧠</span> Experience with version control (e.g., Git)</li>
+            </ul>
+            <p class="modal-text">If you're unsure about any of these topics, don't worry! We offer pre-course materials to help you get up to speed.</p>
+            <button id="closeModal" class="button button-primary">Close</button>
+        </div>
+    </div>
+
+    <script>
+     
+
+    // Roadmap
+    const roadmapSteps = [
+        { week: 1, title: "Building an Idea", description: "Brainstorm and refine your AI concept" },
+        { week: 2, title: "Prototyping", description: "Create a basic prototype of your AI idea" },
+        { week: 3, title: "UI Development", description: "Design a website or app interface for your project" },
+        { week: 4, title: "Mid-Check Presentation", description: "Present your progress and get feedback" },
+        { week: 5, title: "Final Development", description: "Refine and polish your AI project" },
+        { week: 6, title: "Demo Preparation", description: "Prepare for the final showcase of your work" }
+    ];
+
+    const roadmap = document.querySelector('.roadmap');
+    if (roadmap) {
+        roadmapSteps.forEach(step => {
+            const roadmapStep = document.createElement('div');
+            roadmapStep.className = 'roadmap-step';
+            roadmapStep.innerHTML = `
+                <div class="roadmap-number">${step.week}</div>
+                <div class="roadmap-content">
+                    <h3 class="roadmap-title">${step.title}</h3>
+                    <p>${step.description}</p>
+                </div>
+            `;
+            roadmap.appendChild(roadmapStep);
+        });
+    }
+
+    // Modal functionality
+    const modal = document.getElementById('modal');
+    const backgroundCheckBtn = document.getElementById('backgroundCheckBtn');
+    const closeModal = document.getElementById('closeModal');
+
+    if (backgroundCheckBtn) {
+        backgroundCheckBtn.addEventListener('click', function() {
+            modal.style.display = 'flex';
+        });
+    }
+
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
+
+    if (modal) {
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+
+    </script>
+</body>
+</html>
+
