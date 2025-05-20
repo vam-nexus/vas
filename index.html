@@ -254,25 +254,10 @@
                 </a>
             </div>
             <div id="countdown-timer" style="color: white; font-weight: bold; text-align: center; margin: 0 auto; background: rgba(0,0,0,0.3); padding: 8px 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
-                <div class="countdown-container">
-                    <div class="countdown-item">
-                        <span id="days-remaining" class="countdown-value">0</span>
-                        <span class="countdown-label">days</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="hours-remaining" class="countdown-value">0</span>
-                        <span class="countdown-label">hrs</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="minutes-remaining" class="countdown-value">0</span>
-                        <span class="countdown-label">min</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="seconds-remaining" class="countdown-value">0</span>
-                        <span class="countdown-label">sec</span>
-                    </div>
+                <div class="countdown-title">
+                    <span id="days-remaining" class="countdown-value">0</span> days until Demo Day 
+                    (<span id="digital-clock">00:00:00</span>)
                 </div>
-                <div class="countdown-title">until Demo Day (June 28, 2025)</div>
             </div>
             <div class="nav-dropdown">
                 <select id="section-selector" onchange="showWeek(this.value)">
@@ -299,7 +284,6 @@
                     
                     <div class="module-card">
                         <span class="card-number">1</span>
-                        <span class="section-label">Week 0</span>
                         <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
                         <h3>🛠️ Make sure you've got the right tools</h3>
                         <div class="task-content">
@@ -325,7 +309,6 @@
 
                     <div class="module-card">
                         <span class="card-number">2</span>
-                        <span class="section-label">Week 0</span>
                         <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
                         <h3>📋 Fill out the quick form</h3>
                         <div class="task-content">
@@ -346,52 +329,77 @@
 
                     <div class="module-card">
                         <span class="card-number">3</span>
-                        <span class="section-label">Week 0</span>
                         <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
-                        <h3>💬 Join the Discord</h3>
+                        <h3>📺 Watch This Week's Lecture & Build Your AI Chatbot</h3>
                         <div class="task-content">
-                            <p class="highlight-text">Join the Discord → <a href="https://discord.gg/QjAsAUjn" target="_blank">https://discord.gg/QjAsAUjn</a></p>
-                            <p>This will be our main space for all communication, Q&A, updates, and collaboration! 💬🤝</p>
-                            <p>Once you're in, head to the #introductions channel and share:</p>
-                            <ul>
-                                <li>🙋 A few words about yourself</li>
-                                <li>🎯 Why you joined this course</li>
-                                <li>🎉 Something cool or fun about you (we love fun facts!)</li>
-                            </ul>
-                            <p>This helps the community connect, support, and grow together from day one 🌱✨</p>
+                            <p class="highlight-text">Watch this week's lecture to understand the key concepts we'll be working with.</p>
+                            
+                            <p>This lecture covers essential information about building your first AI chatbot and preparing for your project.</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🎬 <strong>Watch Week 1's Lecture:</strong> <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Watch on YouTube</a></li>
+                                <li>First, go through all of this week's tasks to understand what you'll be building</li>
+                                <li>Install <a href="https://cursor.sh/" target="_blank">Cursor</a> and create:
+                                    <ul>
+                                        <li>A simple "hello world" Python script</li>
+                                        <li>A more fancy version with some additional features</li>
+                                    </ul>
+                                </li>
+                                <li>Create a GitHub repository for your chatbot project</li>
+                                <li>Modify the chatbot script to specialize it for your domain (such as a therapist chatbot that only loves to talk about himself with Michael Jackson quotes)</li>
+                                <li>Share your GitHub code and a small video of your interaction with the chatbot in the <a href="https://discord.com/channels/1372507091817988136/1372511186116939847" target="_blank">share-your-work Discord channel</a></li>
+                            </ol>
+                            
                             <h4>📋 Final Deliverable:</h4>
                             <ul class="deliverable-list">
-                                <li>✅ Joined the Discord server</li>
-                                <li>✅ Posted in the #introductions channel</li>
+                                <li>✅ GitHub repository with your chatbot code</li>
+                                <li>✅ Video demonstration of your chatbot interaction</li>
+                                <li>✅ Shared your work in the Discord channel</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div id="Week1" style="display: none;">
                     <center>
-                    <h1 style="color: white; width: 80%; text-align: center;">Welcome to Week 1</h1>
+                    <h1 style="color: white; width: 80%; text-align: center;">Welcome to Week 1 🚀</h1>
                     <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
-                        We're so glad that you made it. Thank you for showing up. Here's everything you'll need for this week.</h4>
-                    <h2 style="color: white; width: 80%; text-align: center;">Deadline: Finish these Tasks by<br> <span style="color: #ff6b6b;">Sunday May 25, 2025</span>  </h2>
+                        We're so glad that you made it. Thank you for showing up. Here's everything you'll need for this week. ✨</h4>
+                    <h2 style="color: white; width: 80%; text-align: center;">Deadline for Finishing these Tasks<br> <span style="color: #ff6b6b;">Sunday May 25, 2025</span> ⏰ </h2>
                     </center>
 
                     <div class="module-card">
                         <span class="card-number">1</span>
-                        <span class="section-label">Week 1</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📺 Watch the Kickoff Event (if you haven't already)</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">If you haven't been to the kickoff event on May 17 (Saturday), please watch the recording to get up to speed. 🎬</p>
+                            
+                            <p>This event covers important information about the program structure, expectations, and introduces you to the AI concepts we'll be working with. 🤖</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>🎬 <strong>Watch the Kickoff Event Recording (May 17 Event):</strong> <a href="https://youtu.be/bAALHEITrwY" target="_blank">Watch on YouTube</a> 
+                                    <br> <ul><span style="font-style: italic;">Note: We apologize for the poor sound quality - hybrid sessions are always challenging 🎧</span></ul>  </li>
+                                <li>📊 <strong>View the Kickoff Event Slides:</strong> <a href="https://vancouver-ai-space--w7o8o99.gamma.site/-2" target="_blank">View Presentation</a></li>
+                            </ul>
+                            
+                           
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">2</span>
                         <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
                         <h3>📅 Register for Week 1 Events</h3>
                         <div class="task-content">
                             
-                            <p class="highlight-text">Register for these 4 events to connect with the community and get support.</p>
+                            <p class="highlight-text">Register for these 3 events to get support and connect with the community. 👥</p>
                            
-                            <p>These events are the best way to connect with others in the program, get help with your assignments, and collaborate on your AI projects.</p>
+                            <p>These events are the best way to connect with others in the program, get help with your assignments, and collaborate on your AI projects. 🤝</p>
                             <h4>📝 Action Items:</h4>
                             <ol type="I" class="action-list">
-                                <li>🎮 <strong>Boardgames and Potluck</strong> - Best way to connect with the people in the group
-                                    <br>📅 May 17 (Today) • 6:30 PM - 10:00 PM PDT
-                                    <br>🔗 <a href="https://lu.ma/yiuhlym1" target="_blank">RSVP Here</a>
-                                </li>
-                                <li>🧠 <strong>Online Q&A Office Hours</strong> - Ask Any Questions Related to the Week's Assignment (and/or AI)
+                                <li>🧠 <strong>Online Q&A Office Hours</strong> - Ask Any Questions Related to this Week's Assignment (and/or AI)
                                     <br>📅 Wednesday, May 21 • 5:30 PM - 6:30 PM PDT
                                     <br>🔗 <a href="https://lu.ma/ttz7fnu2" target="_blank">RSVP Here</a>
                                 </li>
@@ -399,43 +407,125 @@
                                     <br>📅 Thursday, May 22 • 5:30 PM - 7:00 PM PDT
                                     <br>🔗 <a href="https://lu.ma/1ljwz2kb" target="_blank">RSVP Here</a>
                                 </li>
-                                <li>🧠 <strong>Online Q&A Office Hours</strong> - Ask Any Questions Related to the Week's Assignment (and/or AI)
-                                    <br>📅 Saturday, May 24 • 11:00 AM - 12:00 PM PDT
+                                <li>🧠 <strong>Online Q&A Office Hours</strong> - Ask Any Questions Related to this Week's Assignment (and/or AI)
+                                    <br>📅 Saturday, May 24 • 11:00 AM - 12:15 PM PDT
                                     <br>🔗 <a href="https://lu.ma/m6p80nhs" target="_blank">RSVP Here</a>
                                 </li>
                             </ol>
-                            <h4>📋 Final Deliverable:</h4>
-                            <ul class="deliverable-list">
-                                <li>✅ RSVP to all events you plan to attend</li>
-                                <li>✅ Attend the events to connect with the community</li>
+                            
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">3</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>✨ This Week's Highlights</h3>
+                        <div class="task-content">
+                             <p>This week serves as a warm-up to get your environment ready and provide insight into how we can build an AI app. 🔍
+                                <br><br>
+                                It's a preview of what to expect in the development cycle of your project, from development setup and vibe coding to creating a domain-specific chatbot. 🛠️
+                                  <br>  <br>
+                                Next week, we'll focus on fine-tuning your app ideas and team formations will take place. 🤔</p>
+
+                                <p> Please ask any questions you might have in the <a href="https://discord.com/channels/1372507091817988136/1372510938313261056" target="_blank">questions Discord channel</a> - all questions are great!! ❓
+                                    <p style="font-style:italic;color:#ff6b6b;">Note: We will give a $50 prize for the person with the most questions asked and answered 🏆</p>
+                           
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">4</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📺 Watch Week 1's Lecture</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Watch this week's lecture to understand the key concepts we'll be working with. 🎓</p>
+                            
+                            <p>This lecture covers essential information about building your first AI chatbot and preparing for your project. 🤖</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>🎬 <strong>Watch Week 1's Lecture:</strong> <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Watch on YouTube</a></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="module-card">
-                        <span class="card-number">2</span>
-                        <span class="section-label">Week 1</span>
+                        <span class="card-number">5</span>
                         <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
-                        <h3>🤖 Wait for the Lecture Release on Monday</h3>
+                        <h3>🤖 Build Your First AI Chatbot</h3>
                         <div class="task-content">
-                            <p class="highlight-text">The Week 1 lecture will be released on Monday and will cover building a chatbot and deploying it onto GitHub and Hugging Face Spaces.</p>
+                            <p class="highlight-text">Follow these steps (also shown in the lecture) to create your first domain-specific AI chatbot. 💬</p>
                             
-                            <h4>📝 What to Expect:</h4>
-                            <ul class="action-list">
-                                <li>🧠 Learn how to build your own AI chatbot</li>
-                                <li>🚀 Step-by-step instructions for deployment</li>
-                                <li>🌐 Publishing your project on GitHub</li>
-                                <li>☁️ Hosting your chatbot on Hugging Face Spaces</li>
-                            </ul>
+                            <h4>📝 Action Items (as shown in the lecture):</h4>
+                            <ol class="action-list">
+                                <li>⚙️ Install <a href="https://cursor.sh/" target="_blank">Cursor</a> and create:
+                                    <ul>
+                                        <li>🌱 A simple "hello world" Python script</li>
+                                        <li>🚀 A more fancy version with some additional features</li>
+                                    </ul>
+                                </li>
+                                <li>📂 Create a GitHub repository for your chatbot project</li>
+                                <li>🧠 Modify the chatbot script to specialize it for your domain (such as a therapist chatbot that only loves to talk about himself with Michael Jackson quotes)</li>
+                                <li>🔄 Share your GitHub link to the code and a small video (or screenshot) of your interaction with the chatbot in the <a href="https://discord.com/channels/1372507091817988136/1372511186116939847" target="_blank">share-your-work Discord channel</a></li>
+                            </ol>
                             
-                            <p>The lecture will be posted in the Discord channel and added to the resources section. Make sure to check back on Monday!</p>
+                          
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">6</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>💡 Share Your Project Ideas</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Post your AI project ideas in the Discord channel and give feedback to others. 🚀</p>
                             
-                            <h4>📋 Final Deliverable:</h4>
-                            <ul class="deliverable-list">
-                                <li>✅ Watch the lecture when it's released</li>
-                                <li>✅ Follow along with the chatbot building tutorial</li>
-                                <li>✅ Deploy your project by the end of the week</li>
-                            </ul>
+                            <p>Sharing your ideas early, even if they're not perfect, is one of the best ways to refine your AI idea and connect with potential collaborators. Your idea doesn't have to be fully formed or perfect! 🌱</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🚀 <strong>Post your project idea</strong> in the <a href="https://discord.com/channels/1372507091817988136/1373038531550646342" target="_blank">project-ideas Discord channel</a>. 
+                              
+                                </li>
+                                <li>💬 <strong>Provide feedback</strong> on at least 3 other project ideas in the channel
+                                </li>
+                            </ol>
+                            
+                            <h4>📋 This is a great way to expand your horizons by seeing what others are building, connect with others and get valuable feedback to refine your concept before development. 🌟
+                               
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">7</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🔗 Share on LinkedIn (Optional)</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Announce your AI App building journey on LinkedIn to build accountability and gain community support. 📣</p>
+                            
+                            <p>Sharing your journey publicly is a powerful way to stay committed to your goals and connect with others in the AI space. 
+                                
+                                <br><br>
+                                Many participants have found that posting about their progress led to increased visibility, networking opportunities, and community support. 🌐</p>
+                            
+                            <p>Post the link to the LinkedIn post in the <a href="https://discord.com/channels/1372507091817988136/1372511186116939847" target="_blank">share-your-work Discord channel</a> so we could repost it and make you famous. 🌟
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">8</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>✅ Submit Completion Form</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Submit this form to indicate you've completed this week's tasks. 📝</p>
+                            
+                            <p>Once you've completed all the tasks for Week 1, please fill out the completion form to let us know about your progress. 🏁</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🗓️ <strong>Deadline:</strong> Sunday, May 25, 2025</li>
+                                <li>📝 <strong>Submit the form:</strong> <a href="https://forms.gle/ge636mkVZqkbEiN87" target="_blank">Week 1 Completion Form</a></li>
+                            </ol>
                         </div>
                     </div>
                 </div>
@@ -735,9 +825,13 @@
             
             // Update the countdown display
             document.getElementById('days-remaining').textContent = days;
-            document.getElementById('hours-remaining').textContent = hours;
-            document.getElementById('minutes-remaining').textContent = minutes;
-            document.getElementById('seconds-remaining').textContent = seconds;
+            
+            // Format digital clock (HH:MM:SS)
+            const formattedHours = hours.toString().padStart(2, '0');
+            const formattedMinutes = minutes.toString().padStart(2, '0');
+            const formattedSeconds = seconds.toString().padStart(2, '0');
+            document.getElementById('digital-clock').textContent = 
+                `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
             
             // Add color based on urgency
             if (days <= 7) {
