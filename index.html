@@ -261,10 +261,11 @@
             </div>
             <div class="nav-dropdown">
                 <select id="section-selector" onchange="showWeek(this.value)">
-                    <option value="Week0" selected>Week 0 (May 15)</option>
+                    <option value="Week0">Week 0 (May 15)</option>
                     <option value="Week1">Week 1 (May 19)</option>
                     <option value="Week2">Week 2 (May 26)</option>
                     <option value="Week3">Week 3 (June 2)</option>
+                    <option value="Week4" selected>Week 4 (June 9)</option>
                     <option value="gallery">Video Gallery</option>
                 </select>
             </div>
@@ -275,7 +276,7 @@
         
         <div class="dashboard-layout">
             <div class="main-content">
-                <div id="Week0" style="display: block;">
+                <div id="Week0" style="display: none;">
                     <center>
                         <h1 style="color: white; width: 80%; text-align: center;">🎉 We're just DAYS away from kickoff!</h1>
                         <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
@@ -699,7 +700,7 @@
                         <h2 style="color: white; width: 80%; text-align: center;">Deadline for Finishing these Tasks<br> <span style="color: #ff6b6b;">Sunday June 8, 2025</span> ⏰ </h2>
                     </center>
 
-                    <div class="module-card">
+                     <div class="module-card">
                         <span class="card-number">1</span>
                         <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
                         <h3>📢 Announce Your AI App Journey on LinkedIn</h3>
@@ -999,6 +1000,128 @@
                         </div>
                     </div>
                 </div>
+                <div id="Week4" style="display: block;">
+                    <center>
+                        <h1 style="color: white; width: 80%; text-align: center;">Welcome to Week 4 🚀</h1>
+                        <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
+                            This week we'll learn how to use RAG, MCPs, and Flask to create beautiful, functional websites! ✨</h2>
+                        <h2 style="color: white; width: 80%; text-align: center;">Deadline for Finishing these Tasks<br> <span style="color: #ff6b6b;">Sunday June 15, 2025</span> ⏰ </h2>
+                    </center>
+
+                    <div class="module-card">
+                        <span class="card-number">1</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📅 RSVP to Week 4 Events</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Register for these events to get support and connect with the community. 👥</p>
+                           
+                            <p>These events are the best way to connect with others in the program, get help with your assignments, and collaborate on your AI projects. 🤝</p>
+                            <h4>📝 Action Items:</h4>
+                            <ol type="I" class="action-list">
+                                <li>🧠 <strong>Online Q&A Office Hours</strong> - Ask questions about your app and this week's assignment!
+                                    <br>📅 Wednesday, June 11 • 5:30 PM - 6:30 PM PDT
+                                    <br>🔗 <a href="https://lu.ma/q08daati" target="_blank">RSVP Here</a>
+                                </li>
+                                <li>💻 <strong>In-Person Open Chat & Co-Working at 93 Coffee</strong> - Work together and get support in person!
+                                    <br>📅 Thursday, June 12 • 5:30 PM - 7:00 PM PDT
+                                    <br>🔗 <a href="https://lu.ma/rf8re3ed" target="_blank">RSVP Here</a>
+                                </li>
+                                <li>🧠 <strong>Online Q&A Office Hours</strong> - Another chance to get your questions answered!
+                                    <br>📅 Saturday, June 14 • 11:00 AM - 12:15 PM PDT
+                                    <br>🔗 <a href="https://lu.ma/8noepbqw" target="_blank">RSVP Here</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">2</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📺 Watch Week 4's Lecture</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Watch this week's lecture to understand the key concepts for RAG, MCPs, and Flask development! 🎓</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>🎬 <strong>Watch Week 4's Lecture:</strong> <a href="https://www.youtube.com/watch?v=tVEfnF_It2E" target="_blank">Youtube Link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">3</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🔍 Learn About RAG (Retrieval-Augmented Generation)</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Learn to empower your AI applications with external knowledge through RAG! 🧠</p>
+                            
+                            <p>RAG allows your AI to access and utilize external documents, databases, and knowledge bases to provide more accurate and up-to-date responses. This is crucial for building AI apps that can work with your specific data. 📚</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>🔧 <strong>Build RAG Example:</strong> Create <code>rag_example.py</code> under <code>scripts/</code> that uses RAG for a specific use case of your app idea</li>
+                                <li>📖 Copy the code from <a href="https://github.com/IssamLaradji/cool-ai-scripts/blob/main/rag.py" target="_blank">this repo</a> as a base for your RAG implementation</li>
+                                <li>🧪 Modify the data sources to use your own data and modify the question to ask the AI question you want to answer based on your app idea</li>
+                                <li>🔗 Share the github link to your RAG code and a screenshot of your RAG output in the <a href="https://discord.com/channels/1372507091817988136/1382381417673265192" target="_blank">#week-4-outputs Discord channel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">4</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🔗 Learn About MCPs (Model Context Protocol) - Send a Text to a Phone Number</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Learn how MCPs enable seamless integration between AI models and external tools! ⚡</p>
+                            
+                            <p>MCPs provide a standardized way for AI models to interact with external services, APIs, and tools, making your AI applications more powerful and versatile. 🛠️</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>🔧 <strong>Build MCP Examples:</strong> Create <code>mcp_server_example.py</code> and <code>mcp_client_example.py</code> under <code>scripts/</code> that uses MCPs for a specific use case of your app idea</li>
+                                <li>🔍 Copy this code for the <a href="https://github.com/IssamLaradji/cool-ai-scripts/blob/main/mcp_server.py" target="_blank">the mcp_server.py</a></li>
+                                <li>🔍 Copy this code for the <a href="https://github.com/IssamLaradji/cool-ai-scripts/blob/main/mcp_client.py" target="_blank">the mcp_client.py</a></li>
+                                <li>💡 Follow the steps in the <code>mcp_server.py</code> to create a process that allows you to send text messages on the phone automatically. Create an account in <a href="https://surge.app/" target="_blank">Surge</a></li>
+                                <li> Modify the tools in the <code>mcp_server.py</code> and the process in <code>mcp_client.py</code> to send a message to your phone in the way that fits your app idea</li>
+                                <li>🔗 Share the github link to your mcp code and a screenshot of your phone with the text message in the <a href="https://discord.com/channels/1372507091817988136/1382381417673265192" target="_blank">#week-4-outputs Discord channel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">5</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🌐 Build Beautiful Websites with Flask</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Move beyond Gradio and create stunning, professional web applications with Flask! 🎨</p>
+                            
+                            <p>Flask gives you complete control over your web application's design and functionality, allowing you to create beautiful, custom interfaces that truly represent your vision. 🚀</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>📺 Use the AI assistant to help you create the <code>app.py</code> and the <code>templates/index.html</code> based on the gradio app that you created which you had a proof of concept</li>
+                                <li>🏗️ test your <code>app.py</code> to see if it handles some of the usecases of your app idea</li>
+                                <li>🔗 Share a screenshot of the site that gets displayed when running  <code>python app.py</code> in the <a href="https://discord.com/channels/1372507091817988136/1382381417673265192" target="_blank">#week-4-outputs Discord channel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">7</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>✅ Submit Week 4 Completion Form</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Submit this form to indicate you've completed this week's tasks. 📝</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🗓️ <strong>Deadline:</strong> Sunday, June 15, 2025</li>
+                                <li> Update your github repo with the new code and the new changes</li>
+                                <li>📝 <strong>Submit the form:</strong> <a href="https://forms.gle/fxpGXxeiMjRqLRyV8" target="_blank">Week 4 Completion Form </a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
                 <div id="gallery" style="display: none;">
                     <center>
                         <h2 style="color: white; width: 80%; text-align: left;">Video Gallery</h2>
@@ -1186,7 +1309,7 @@
 
         // Handle URL-based navigation
         function handleUrlSection() {
-            const hash = window.location.hash.slice(1) || 'Week3'; // default to Week1 if no hash
+            const hash = window.location.hash.slice(1) || 'Week4'; // default to Week4 if no hash
             showWeek(hash);
         }
 
