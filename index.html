@@ -265,7 +265,8 @@
                     <option value="Week1">Week 1 (May 19)</option>
                     <option value="Week2">Week 2 (May 26)</option>
                     <option value="Week3">Week 3 (June 2)</option>
-                    <option value="Week4" selected>Week 4 (June 9)</option>
+                    <option value="Week4">Week 4 (June 9)</option>
+                    <option value="Week5" selected>Week 5 (June 16)</option>
                     <option value="gallery">Video Gallery</option>
                 </select>
             </div>
@@ -1000,7 +1001,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="Week4" style="display: block;">
+                <div id="Week4" style="display: none;">
                     <center>
                         <h1 style="color: white; width: 80%; text-align: center;">Welcome to Week 4 🚀</h1>
                         <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
@@ -1119,6 +1120,59 @@
                                 <li> Update your github repo with the new code and the new changes</li>
                                 <li>📝 <strong>Submit the form:</strong> <a href="https://forms.gle/fxpGXxeiMjRqLRyV8" target="_blank">Week 4 Completion Form </a></li>
                             </ol>
+                        </div>
+                    </div>
+                </div>
+                <div id="Week5" style="display: block;">
+                    <center>
+                        <h1 style="color: white; width: 80%; text-align: center;">Welcome to Week 5 🎯</h1>
+                        <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
+                            This week is all about getting feedback on your progress to improve your app! ✨</h2>
+                        <h2 style="color: white; width: 80%; text-align: center;">Deadline for Finishing these Tasks<br> <span style="color: #ff6b6b;">Sunday June 22, 2025</span> ⏰ </h2>
+                    </center>
+
+                    <div class="module-card">
+                        <span class="card-number">1</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🚀 Deploy Latest Version to Hugging Face</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Update your Hugging Face Space with your latest app (such as Flask) to showcase your progress! 🌐</p>
+                            
+                            <p>Now that you've built a more sophisticated application, it's time to update your deployment to show off your progress. This will help you get better feedback during the presentation. 🎯</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🔄 <strong>Update your Hugging Face Space:</strong>
+                                    <ul>
+                                        <li>Update your <code>app.py</code> with your latest app implementation</li>
+                                        <li>Update your <code>requirements.txt</code> to include any new dependencies</li>
+                                        <li>Test that your app builds and runs successfully on Hugging Face</li>
+                                    </ul>
+                                </li>
+                                <li>🔗 Share your updated Hugging Face Space URL in the <a href="https://discord.com/channels/1372507091817988136/1384591660115886112" target="_blank">#week-5-outputs Discord channel</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">2</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🎤 Present Your Progress</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Present your app's progress in a 2-minute demo and get valuable feedback! 💡</p>
+                            
+                            <p>This is your chance to show what you've built so far and get constructive feedback to make your app even better. No slides needed - just show your app in action! 🚀</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                
+                                <li>📝 <strong>Add yourself to the lineup:</strong> <a href="https://docs.google.com/spreadsheets/d/1COuUCLtWFXkQYj1c2a_CK5Zhm6NtdQsllSGdbxqiPxo/edit?usp=sharing" target="_blank">Progress Presentation Lineup</a>
+                                
+                                    <ul>
+                                        <li>Options: Wednesday (5:30-6:30PM PDT), Thursday (5:30-7:00PM PDT), Saturday (11:00-12:15PM PDT)</li>
+                                    </ul>
+                                </li>
+                                </ol>
                         </div>
                     </div>
                 </div>
@@ -1309,7 +1363,7 @@
 
         // Handle URL-based navigation
         function handleUrlSection() {
-            const hash = window.location.hash.slice(1) || 'Week4'; // default to Week4 if no hash
+            const hash = window.location.hash.slice(1) || 'Week5'; // default to Week5 if no hash
             showWeek(hash);
         }
 
