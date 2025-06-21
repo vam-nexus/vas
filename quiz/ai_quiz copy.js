@@ -180,6 +180,18 @@ const quizData = {
         },
         {
             "type": "quiz",
+            "question": "What is 'bagging' in ensemble methods?",
+            "choices": [
+                "Using multiple models to reduce variance",
+                "Using one model to increase variance",
+                "Bagging features to improve accuracy",
+                "Selecting the best single model"
+            ],
+            "answer": "Using multiple models to reduce variance",
+            "justification": "Bagging trains multiple models on bootstrapped subsets and combines their predictions to reduce variance and improve robustness."
+        },
+        {
+            "type": "quiz",
             "question": "What is 'regularization' in machine learning?",
             "choices": [
                 "A technique to prevent overfitting",
@@ -337,7 +349,13 @@ const quizData = {
         "answer": "Adam",
         "justification": "Adam is commonly used to train transformers due to its efficiency and effectiveness in handling sparse gradients."
     },
-
+    {
+        "type": "quiz",
+        "question": "What is the purpose of layer normalization in transformer models?",
+        "choices": ["To prevent overfitting", "To stabilize and speed up training", "To introduce non-linearity", "To reduce the number of parameters"],
+        "answer": "To stabilize and speed up training",
+        "justification": "Layer normalization stabilizes the learning process and speeds up training by normalizing the inputs to each layer."
+    },
     {
     "type": "quiz",
     "question": "What is the bias-variance tradeoff in machine learning?",
@@ -364,6 +382,18 @@ const quizData = {
   },
   {
     "type": "quiz",
+    "question": "What does ROC-AUC represent?",
+    "choices": [
+      "The area under the precision-recall curve",
+      "The correlation between input features",
+      "The ability of a classifier to distinguish between classes",
+      "The overfitting rate of a model"
+    ],
+    "answer": "The ability of a classifier to distinguish between classes",
+    "justification": "ROC-AUC measures the classifier’s ability to differentiate between classes by plotting true positive vs. false positive rates."
+  },
+  {
+    "type": "quiz",
     "question": "When would you use a convolutional neural network (CNN)?",
     "choices": [
       "For sequential text data",
@@ -373,6 +403,18 @@ const quizData = {
     ],
     "answer": "For image data and spatial patterns",
     "justification": "CNNs are specifically designed to capture spatial features and local patterns, making them ideal for image data."
+  },
+  {
+    "type": "quiz",
+    "question": "What is the primary difference between bagging and boosting?",
+    "choices": [
+      "Bagging reduces bias, boosting reduces variance",
+      "Bagging trains sequentially, boosting trains independently",
+      "Boosting focuses on difficult cases, bagging averages over many models",
+      "Boosting increases model simplicity"
+    ],
+    "answer": "Boosting focuses on difficult cases, bagging averages over many models",
+    "justification": "Bagging builds models independently and averages their output, while boosting builds sequentially, correcting prior errors."
   },
   {
     "type": "quiz",
